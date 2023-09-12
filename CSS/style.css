@@ -4,12 +4,39 @@
   box-sizing: border-box;
 }
 
+/* COLORS */
+
 html {
   font-family: sans-serif;
 }
 
+:root {
+  --blue: #0061ff;
+}
+
 img {
+  max-width: 100%;
+}
+
+figure > img {
+  display: block;
   width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
 }
 
 /* DEBUG */
@@ -35,21 +62,21 @@ img {
 
 .page-header {
   padding: 18px 0;
+  background-color: white;
+  position: fixed;
+  width: 100%;
 }
 
 .page-header ul {
-  list-style: none;
   display: flex;
 }
 
 .page-header ul li {
-  text-decoration: none;
   font-size: 14px;
   padding: 0 10px;
 }
 
 .page-header ul li a {
-  text-decoration: none;
   color: #555555;
 }
 
@@ -68,7 +95,7 @@ img {
 }
 
 .right-nav li:last-child {
-  background-color: #0061ff;
+  background-color: var(--blue);
   padding: 9px 19px;
 }
 
@@ -91,7 +118,7 @@ img {
 .hero-title {
   font-weight: bold;
   font-size: 80px;
-  padding-top: 60px;
+  padding-top: 130px;
   padding-bottom: 50px;
 }
 
@@ -145,116 +172,142 @@ img {
   font-size: 12px;
 }
 
-.section-2 .col-4:nth-child(odd) {
-  padding: 0 20px 0 20px;
-}
-
-.padding-left {
-  padding: 0 20px 0 0;
-}
-
-.section-2 .col-4:last-child {
-  padding-left: 25px;
-}
-
-.content {
+/* .content {
   flex-direction: column;
   align-items: center;
   border: 1px solid #d3d3d6;
-}
-
-.title {
-  width: 100%;
-  display: block;
-  padding: 8px;
-  border-bottom: 1px solid #d3d3d6;
-  text-align: center;
-}
-
-.title i {
-  font-size: 14px;
-}
-
-.title span:last-child {
-  color: #d3d3d6;
-}
+} */
 
 /* CONTENT */
 
-.content ul i {
-  transform: scale(0.8);
-}
-
-.content ul {
-  list-style: none;
-  padding: 35px 30px;
-  font-size: 15px;
+.section-2 .col-4 {
   font-weight: 100;
+  padding: 0 25px;
 }
 
-.list-category {
+.col__container {
+  height: 100%;
+  border: 1px solid #d3d3d6;
+}
+
+.col__header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #d3d3d6;
+  line-height: 40px;
+  gap: 5px;
+}
+
+.col__body {
+  padding: 30px;
+}
+
+.col__body__title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.col__body__title__offer {
   font-weight: bold;
   font-size: 24px;
-  padding-bottom: 10px;
 }
 
-.price {
-  font-weight: bold;
-  padding-bottom: 8px;
-}
-
-.duration {
+.col__body__title__duration {
+  font-weight: 100;
   color: #d3d3d6;
-  padding-bottom: 30px;
 }
 
-.content-cta {
+.col__body__details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.col__body__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 56px 0;
+}
+
+.col__body__cta__try-now {
   background-color: #0061ff;
-  padding: 10px 15px;
-  /* margin-left: 15px; */
-  margin-bottom: 30px;
-  margin-top: 20px;
+  color: white;
+  line-height: 40px;
   text-align: center;
 }
 
-.content-cta a {
-  color: white;
-  text-decoration: none;
+.col__body__cta__buy-now-wrapper {
+  width: 145px;
+  border-bottom: 2px solid #d3d3d6;
+  padding-bottom: 40px;
 }
 
-.buy-now {
-  padding-bottom: 30px;
+.col__body__cta__buy-now span {
+  color: #0061ff;
+  text-decoration: underline;
 }
 
-.grey-line {
-  display: inline-block;
-  padding: 20px;
-  border-top: 2px solid #d3d3d6;
+.col__body__highlights ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.highlights {
+.col__body__highlights__title {
   font-weight: bold;
-  padding-bottom: 30px;
 }
 
-.check-icon {
+.col__body__highlights__icon {
   color: #0061ff;
   font-size: 18px;
+}
+
+.col-12 {
+  margin-top: 50px;
+  padding: 0 25px;
+}
+
+.col-12 .col__body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col-12 .col__text {
+  padding-right: 300px;
+  font-weight: 100;
+  padding-top: 50px;
+}
+
+.col-12 .col__body__title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.col-12 .col__body__cta {
+  margin: 0;
 }
 
 /* CONTAINERS */
 
 .container-l {
-  width: 100vw;
+  width: 100%;
 }
 
 .container-m {
-  width: 1150px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
 .container-s {
-  width: 980px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -291,13 +344,6 @@ img {
 
 .padding-bottom-20 {
   padding-bottom: 20px;
-}
-
-.padding-bottom-102 {
-  padding-bottom: 133px;
-}
-.padding-bottom-143 {
-  padding-bottom: 173px;
 }
 
 .margin-top {
